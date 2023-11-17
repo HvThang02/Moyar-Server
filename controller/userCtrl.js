@@ -347,7 +347,7 @@ const userCart = asyncHandler(async (req, res) => {
       let object = {};
       object.product = cart[i]._id;
       object.count = cart[i].count;
-      object.sizes = cart[i].sizes;
+      object.size = cart[i].size;
       let getPrice = await Product.findById(cart[i]._id).select("price").exec();
       object.price = getPrice.price;
       products.push(object);
